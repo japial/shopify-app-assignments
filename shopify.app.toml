@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "growing-shipping-app"
+client_id = "844af295a6fd7df3883597f85db5b0fb"
+application_url = "https://ibm-ng-total-confirmed.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://ibm-ng-total-confirmed.trycloudflare.com/auth/callback",
+  "https://ibm-ng-total-confirmed.trycloudflare.com/auth/shopify/callback",
+  "https://ibm-ng-total-confirmed.trycloudflare.com/api/auth/callback",
+  "https://ibm-ng-total-confirmed.trycloudflare.com/.shopify/graphiql/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "pialneel.myshopify.com"
