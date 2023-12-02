@@ -2,7 +2,7 @@
 
 name = "growing-shipping-app"
 client_id = "844af295a6fd7df3883597f85db5b0fb"
-application_url = "https://faces-assembly-france-affiliation.trycloudflare.com"
+application_url = "https://directors-doubt-changelog-bedrooms.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://faces-assembly-france-affiliation.trycloudflare.com/auth/callback",
-  "https://faces-assembly-france-affiliation.trycloudflare.com/auth/shopify/callback",
-  "https://faces-assembly-france-affiliation.trycloudflare.com/api/auth/callback",
-  "https://faces-assembly-france-affiliation.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://directors-doubt-changelog-bedrooms.trycloudflare.com/auth/callback",
+  "https://directors-doubt-changelog-bedrooms.trycloudflare.com/auth/shopify/callback",
+  "https://directors-doubt-changelog-bedrooms.trycloudflare.com/api/auth/callback",
+  "https://directors-doubt-changelog-bedrooms.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

@@ -1,9 +1,9 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { BlockStack, Button, InlineGrid, Text } from "@shopify/polaris";
 import ProductsTable from "~/components/ProductsTable";
-import { Features } from "~/config/constant";
+import { Actions, Features } from "~/config/constant";
 import { getCollections } from "~/models/Collection.server";
 import { authenticate } from "~/shopify.server";
 
@@ -24,9 +24,7 @@ export default function CollectionsPage() {
         <Text as="h2" variant="bodyMd">
           Collection List
         </Text>
-        <Link to={`/app/collections/form/create`}>
-          <Button>Create</Button>
-        </Link>
+        <Button url={`/app/collections/form/${Actions.create}`}>Create</Button>
       </InlineGrid>
 
       {collections.length && (
