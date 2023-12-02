@@ -20,3 +20,21 @@ model Session {
   accessToken String
   userId      BigInt?
 }
+
+model Collection {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  shop        String
+  createdAt   DateTime  @default(now())
+  products    Product[]
+}
+
+model Product {
+  id           Int        @id @default(autoincrement())
+  name         String
+  description  String
+  collectionId Int
+  createdAt    DateTime   @default(now())
+  Collection   Collection @relation(fields: [collectionId], references: [id])
+}

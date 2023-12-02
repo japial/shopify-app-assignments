@@ -2,7 +2,7 @@
 
 name = "growing-shipping-app"
 client_id = "844af295a6fd7df3883597f85db5b0fb"
-application_url = "https://usd-polar-erik-report.trycloudflare.com"
+application_url = "https://hire-recommended-king-texts.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://usd-polar-erik-report.trycloudflare.com/auth/callback",
-  "https://usd-polar-erik-report.trycloudflare.com/auth/shopify/callback",
-  "https://usd-polar-erik-report.trycloudflare.com/api/auth/callback",
-  "https://usd-polar-erik-report.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://hire-recommended-king-texts.trycloudflare.com/auth/callback",
+  "https://hire-recommended-king-texts.trycloudflare.com/auth/shopify/callback",
+  "https://hire-recommended-king-texts.trycloudflare.com/api/auth/callback",
+  "https://hire-recommended-king-texts.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]
