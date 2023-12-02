@@ -2,7 +2,7 @@
 
 name = "growing-shipping-app"
 client_id = "844af295a6fd7df3883597f85db5b0fb"
-application_url = "https://disable-alt-accept-mirror.trycloudflare.com"
+application_url = "https://faces-assembly-france-affiliation.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://disable-alt-accept-mirror.trycloudflare.com/auth/callback",
-  "https://disable-alt-accept-mirror.trycloudflare.com/auth/shopify/callback",
-  "https://disable-alt-accept-mirror.trycloudflare.com/api/auth/callback",
-  "https://disable-alt-accept-mirror.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://faces-assembly-france-affiliation.trycloudflare.com/auth/callback",
+  "https://faces-assembly-france-affiliation.trycloudflare.com/auth/shopify/callback",
+  "https://faces-assembly-france-affiliation.trycloudflare.com/api/auth/callback",
+  "https://faces-assembly-france-affiliation.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

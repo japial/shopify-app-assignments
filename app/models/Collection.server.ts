@@ -1,3 +1,4 @@
+import type { Collection } from "@prisma/client";
 import db from "../db.server";
 
 export async function getCollections(shop: string) {
@@ -17,4 +18,21 @@ export async function findCollection(id: number) {
   });
 
   return collection;
+}
+
+export async function createCollection(
+  collection: Pick<Collection, "name" | "description" | "shop">
+) {
+  return db.collection.create({ data: collection });
+}
+
+export async function updateCollection(
+  id: number,
+  collection: Pick<Collection, "name" | "description">
+) {
+  return db.collection.update({ data: collection, where: { id } });
+}
+
+export async function deleteCollection(id: number) {
+  return db.collection.delete({ where: { id } });
 }
