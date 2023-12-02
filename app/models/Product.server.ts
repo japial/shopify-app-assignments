@@ -1,4 +1,4 @@
-import { Product } from "@prisma/client";
+import type { Product } from "@prisma/client";
 import db from "../db.server";
 
 export async function getProducts(collectionId: number) {
