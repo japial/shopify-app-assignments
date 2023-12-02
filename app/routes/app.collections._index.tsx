@@ -1,7 +1,15 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData, useNavigate } from "@remix-run/react";
-import { BlockStack, IndexTable, EmptyState } from "@shopify/polaris";
+import { useLoaderData, useNavigate } from "@remix-run/react";
+import {
+  BlockStack,
+  Button,
+  EmptyState,
+  InlineGrid,
+  Text,
+} from "@shopify/polaris";
+import ProductsTable from "~/components/ProductsTable";
+import { Features } from "~/config/constant";
 import { getCollections } from "~/models/Collection.server";
 import { authenticate } from "~/shopify.server";
 
@@ -13,11 +21,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     collections,
   });
 };
-function truncate(str: string, { length = 25 } = {}) {
-  if (!str) return "";
-  if (str.length <= length) return str;
-  return str.slice(0, length) + "…";
-}
 
 const EmptyCollectionState = ({ onAction }: any) => (
   <EmptyState
@@ -32,40 +35,24 @@ const EmptyCollectionState = ({ onAction }: any) => (
   </EmptyState>
 );
 
-const CollectionTable = ({ collections }: any) => (
-  <IndexTable
-    resourceName={{
-      singular: "Collection",
-      plural: "Collections",
-    }}
-    itemCount={collections.length}
-    headings={[{ title: "Name" }, { title: "Description" }]}
-    selectable={false}
-  >
-    {collections.map((collection: any) => (
-      <CollectionTableRow key={collection.id} collection={collection} />
-    ))}
-  </IndexTable>
-);
-
-const CollectionTableRow = ({ collection }: any) => (
-  <IndexTable.Row id={collection.id} position={collection.id}>
-    <IndexTable.Cell>
-      <Link to={`${collection.id}`}>{truncate(collection.name)}</Link>
-    </IndexTable.Cell>
-    <IndexTable.Cell>{collection.description}</IndexTable.Cell>
-  </IndexTable.Row>
-);
-
 export default function CollectionsPage() {
   const { collections } = useLoaderData<typeof loader>();
   const navigate = useNavigate();
   return (
-    <BlockStack gap="300">
+    <BlockStack gap="600">
+      <InlineGrid gap="300" columns={2}>
+        <Text as="h2" variant="bodyMd">
+          Collection List
+        </Text>
+        <Button tone="success">Create</Button>
+      </InlineGrid>
+
       {collections.length === 0 ? (
-        <EmptyCollectionState onAction={() => navigate("collection/new")} />
+        <EmptyCollectionState
+          onAction={() => navigate("form/collection/create")}
+        />
       ) : (
-        <CollectionTable collections={collections} />
+        <ProductsTable products={collections} feature={Features.collection} />
       )}
     </BlockStack>
   );
